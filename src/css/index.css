@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+body {
+  font-family: "Rubik", sans-serif;
+  margin: 0;
+}
+
+button{
+  border: none;
+  background-color: #F9F9F9;
+  cursor: pointer;
+}
+
+.container{
+  margin: 0 auto;
+  width: 700px;
+}
+
+h1 {
+  font-size: 96px;
+  text-align: center;
+}
+
+.task__container{
+  background-color: #F9F9F9;
+  border-radius: 10px;
+  box-shadow: 4px 4px 27px rgba(0, 0, 0, 0.1);
+  width: 700px;
+}
+
+#taskInput{
+  background-color: #fff;
+  border: none;
+  width: 92.9%;
+  padding: 35px 0;
+  border-radius: 10px 10px 0 0;
+  font-size: 36px;
+  padding-left: 50px;
+  margin-bottom: 30px;
+  font-style: italic;
+}
+
+.tasks{
+  display: flex;
+  flex-direction: column;
+  padding-left: 50px;
+  padding-bottom: 35px;
+}
+
+.task{
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.text__task{
+  margin-left: 30px;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.delete{
+  margin-left: auto;
+  margin-right: 55px;
+  width: 32px;
+  height: 32px;
+  background: url("../img/delete.png") no-repeat center;
+}
+
+.no_complete{
+  background: url("../img/no_complete.png") no-repeat center;
+  width: 70px;
+  height: 70px;
+}
+
+.complete{
+  background: url("../img/complete.png") no-repeat center;
+  width: 70px;
+  height: 70px;
+}
+
+.no_complete img, .delete img{
+ z-index: 0;
+}
+
+.complete_task{
+  text-decoration: line-through;
+  color: #D7D7D7;
+}
