@@ -45,6 +45,9 @@ h1 {
   flex-direction: column;
   padding-left: 50px;
   padding-bottom: 35px;
+  height: 325px;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
 }
 
 .task{
@@ -86,4 +89,23 @@ h1 {
 .complete_task{
   text-decoration: line-through;
   color: #D7D7D7;
+}
+
+.tasks__info{
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 24px;
+  background-color: #fff;
+  border-radius: 0 0 10px 10px;
+  cursor: pointer;
+  color:rgba(125, 125, 125, 1);
+}
+
+.tasks__info p{
+  transition: 0.3s ease all;
+  text-decoration:underline;
+}
+
+.tasks__info p:hover{
+  color: black;
 }
