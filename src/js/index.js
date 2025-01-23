@@ -81,7 +81,7 @@ document.addEventListener("click", event => {
 function render() {
 
   // Total no complete tasks
-  countNoCompleteTasks = tasks.length - countCompleteTasks;
+  countNoCompleteTasks = tasks.filter(task => !task.isComplete).length;
 
   tasksContainer.innerHTML = "";
 
