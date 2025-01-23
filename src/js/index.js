@@ -1,4 +1,3 @@
-// Declare variables
 
 // Take tasks from local storage or empty array
 let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
@@ -16,7 +15,7 @@ let noCompleteTasks = false;
 
 // Counters
 let countCompleteTasks = tasks.filter(task => task.isComplete).length;
-let countNoCompleteTasks = 0;
+let countNoCompleteTasks = tasks.filter(task => !task.isComplete).length;
 
 render();
 
@@ -63,15 +62,19 @@ document.addEventListener("click", event => {
 
   }
 
+  // Check lick to total tasks
+  if(event.target.classList.contains("tasks__total"))
+    showAllTasks();
+
   // Check click to tasks complete
-  if (event.target.classList.contains("tasks__complete")) {
+  if (event.target.classList.contains("tasks__complete")) 
     showCompleteTasks();
-  }
+  
 
   // Check click to tasks no complete
-  if(event.target.classList.contains("tasks__nocomplete")){
+  if(event.target.classList.contains("tasks__nocomplete"))
     showNoCompleteTasks();
-  }
+  
 
 });
 
@@ -123,7 +126,7 @@ function render() {
   //Render count total tasks, complete tasks no complete
 
   totalTasks.textContent = `Total tasks: ${tasks.length}`;
-  tasksComplete.textContent = `Tasks complete: ${countCompleteTasks}`;
+  tasksComplete.textContent = `Complete: ${countCompleteTasks}`;
   tasksNoComplete.textContent = `Tasks: ${countNoCompleteTasks}`;
 
 }
@@ -194,6 +197,12 @@ function checkedTask(id) {
   }
 
   localStorage.setItem("tasks", JSON.stringify(tasks));
+  render();
+}
+
+function showAllTasks(){
+  noCompleteTasks = false;
+  isCompleteTasks = false;
   render();
 }
 
